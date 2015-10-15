@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poster</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="main">
+  <button onclick="newPost()" id="new-post-button">Create Post</button>
+
+  <div id="post-list"></div>
+
+  <div id="post-form">
+    <div class="wrapper">
+      <span class="close-new-form" onclick="closeNewPost()">&#10006;</span>
+      <h1>Post Editor</h1>
+      <label for="title">Title</label>
+      <input type="text" class="title" id="title"/>
+      <label for="content">Content</label>
+      <textarea name="" cols="30" rows="10" id="content" class="content"></textarea>
+      <button onclick="send()">Save</button>
+      <pre class="preview-box"><code class="preview"></code></pre>
+    </div>
+  </div>
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
