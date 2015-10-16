@@ -11,7 +11,7 @@ var postInstance = {
 
 var showPostList = function() {
   $('#post-list').empty();
-  $.getJSON('/posts', function(data) {
+  $.getJSON('http://localhost:3000/posts', function(data) {
     $.each(data, function() {
       $('#post-list').append('<div class="post-box post-' + this.id + '"><h3 class="post-title" data-tooltip="edit this post"><a href="#" onclick="editPost(' + this.id + ')">' + this.title + '</a><small class="post-date">' + this.date + '</small></h3><div class="post-content hide">' + this.content + '</div></div>');
     });
@@ -25,14 +25,14 @@ var send = function() {
   if (postInstance.edit) {
     $.ajax({
       type: "Put",
-      url: "/posts/"+postInstance.id,
+      url: "http://localhost:3000/posts/"+postInstance.id,
       data: postData,
       dataType: JSON
     });
   }else{
     $.ajax({
       type: "POST",
-      url: "/posts",
+      url: "http://localhost:3000/posts",
       data: postData,
       dataType: JSON
     });
